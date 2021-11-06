@@ -43,11 +43,22 @@
 
 
 # Create a list of overlapping numbers in file1.txt and file2.txt
-with open("file1.txt") as file1:
-    file1_data = file1.readlines()
+# with open("file1.txt") as file1:
+#     file1_data = file1.readlines()
+#
+# with open("file2.txt") as file2:
+#     file2_data = file2.readlines()
+#
+# overlapping_data = [int(item.strip('\n')) for item in file1_data if item in file2_data]
+# print(overlapping_data)
 
-with open("file2.txt") as file2:
-    file2_data = file2.readlines()
+# Dictionary comprehension
+# new_dict = {new_key:new_value for item in list}
+# new_dict = {new_key:new_value for (key,value) in dict.items()}
+import random
 
-overlapping_data = [int(item.strip('\n')) for item in file1_data if item in file2_data]
-print(overlapping_data)
+names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Eleanor', 'Freddie']
+student_scores = {name:random.randint(0, 100) for name in names}
+print(student_scores)
+passed_students = {name:score for (name, score) in student_scores.items() if score >= 60}
+print(passed_students)
